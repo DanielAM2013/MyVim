@@ -1,7 +1,5 @@
 MyVim
 =====
-
-Atualizações e configurações Vim
-adsdasdas teste de atualização
+	Repositorio para o armazenamento de templates e shortcuts do editor Vim
 
 
