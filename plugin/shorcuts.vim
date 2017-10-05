@@ -1,23 +1,5 @@
-map <F2> :w!<CR>
-imap <F2> <Esc>:w!<CR><Right>i
-map <F3> :wq!<CR>
-imap <F3> <Esc>:wq!<CR>
-map <F4> :q!<CR>
-imap <F4> <Esc>:q!<CR>
-
-nnoremap <F5> <Esc>:!make<CR><CR>
-inoremap <F5> <Esc>:!make<CR><CR><CR>i
-nnoremap <F7> <Esc>:!make view<CR><CR>
-inoremap <F7> <Esc>:!make view<CR><CR>i
-
-nnoremap <S-Right> :tabn<CR>
-inoremap <S-Right> <Esc>:tabn<CR>i
-nnoremap <S-Left> :tabp<CR>
-inoremap <S-Left> <Esc>:tabp<CR>i
-
 noremap <silent> <F6> :TlistToggle<CR>:NERDTreeToggle<CR>
 
-"daniel
 "function! GoogleSearch()
 "	let searchterm = getreg("g")
 "	silent! exec "silent! !chromium \"http://google.com/search?q=" . searchterm . "\" &"
@@ -25,8 +7,8 @@ noremap <silent> <F6> :TlistToggle<CR>:NERDTreeToggle<CR>
 "noremap <F8> "gy<Esc>:call GoogleSearch()<CR>
 
 
-imap <c-6> <Esc>tabe <cWORD><CR>
-nnoremap ; :
+"imap <c-6> <Esc>tabe <cWORD><CR>
+"nnoremap ; :
 
 
 set backspace=2
@@ -43,7 +25,7 @@ let g:netrw_browsex_viewer="setsid xdg-open"
 let g:syntastic_cpp_include_dirs=['lib']
 au BufNewFile,BufRead *.cl setlocal ft=c
 
-set colorcolumn=80
+set colorcolumn=81
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 set laststatus=2
@@ -71,8 +53,8 @@ set listchars=tab:\|\ ,trail:~,extends:>,precedes:<,eol:;
 "set listchars=tab:>_,trail:̣̣̣̣~,extends:>,precedes:<,eol:$
 
 set list
-set number
-"set relativenumber
+"set number
+set relativenumber
 set wildmenu
 set hlsearch
 set autoindent
@@ -116,7 +98,7 @@ command! MakeTags !ctags -R .
 "	:<CR>wh
 "endfunction
 "autocmd VimEnter * exec "normal \<C-W>h"
-
+let g:NERDTreeWinPos = "right"
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
@@ -127,7 +109,8 @@ command! MakeTags !ctags -R .
 "Use the Linux dictionary when spelling is in doubt.
 "Window users can copy the file to their machine.
 
-set dictionary+="/usr/share/dict/words"
+"set dictionary+="/usr/share/dict/words"
+
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
     return "\<C-N>"
@@ -137,5 +120,22 @@ function! Tab_Or_Complete()
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 
+nnoremap <F2> :w!<CR>
+inoremap <F2> <Esc>:w!<CR><Right>i
+
+nnoremap <F3> :wq!<CR>
+inoremap <F3> <Esc>:wq!<CR>
+nnoremap <F4> :q!<CR>
+inoremap <F4> <Esc>:q!<CR>
+
+nnoremap <F5> <Esc>:!make<CR><CR>
+inoremap <F5> <Esc>:!make<CR><CR><CR>i
+nnoremap <F7> <Esc>:!make view<CR><CR>
+inoremap <F7> <Esc>:!make view<CR><CR>i
+
+nnoremap <S-Right> :tabn<CR>
+inoremap <S-Right> <Esc>:tabn<CR>i
+nnoremap <S-Left> :tabp<CR>
+inoremap <S-Left> <Esc>:tabp<CR>i
 
 
