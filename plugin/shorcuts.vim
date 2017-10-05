@@ -1,4 +1,10 @@
 noremap <silent> <F6> :TlistToggle<CR>:NERDTreeToggle<CR>
+"autocmd FileType c,cpp TlistOpen
+"TlistToggle
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd h
+
+
 
 "function! GoogleSearch()
 "	let searchterm = getreg("g")
@@ -128,8 +134,8 @@ inoremap <F3> <Esc>:wq!<CR>
 nnoremap <F4> :q!<CR>
 inoremap <F4> <Esc>:q!<CR>
 
-nnoremap <F5> <Esc>:!make<CR><CR>
-inoremap <F5> <Esc>:!make<CR><CR><CR>i
+nnoremap <F5> <Esc>:!make 2>&1 \| tee .log<CR><CR>
+inoremap <F5> <Esc>:!make 2>&1 \| tee .log<CR><CR><CR>
 nnoremap <F7> <Esc>:!make view<CR><CR>
 inoremap <F7> <Esc>:!make view<CR><CR>i
 
@@ -137,5 +143,3 @@ nnoremap <S-Right> :tabn<CR>
 inoremap <S-Right> <Esc>:tabn<CR>i
 nnoremap <S-Left> :tabp<CR>
 inoremap <S-Left> <Esc>:tabp<CR>i
-
-
